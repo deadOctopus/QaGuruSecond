@@ -25,7 +25,7 @@ public class DemoQaTest {
         $("#firstName").setValue("Vadim");
         $("#lastName").setValue("Frolov");
         $("#userEmail").setValue("vadim.frolov.2018@inbox.ru");
-        $("#userNumber").setValue("89996120281");
+        $("#userNumber").setValue("8999612028");
         $("#currentAddress").setValue("Penza");
 
         $(byText("Male")).click();
@@ -41,8 +41,8 @@ public class DemoQaTest {
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
 
-        File test = new File("src/test/resources/file.png");
-        $("#uploadPicture").uploadFile(test);
+
+        $("#uploadPicture").uploadFromClasspath("file.png");
 
         $("#submit").scrollTo().click();
 
@@ -50,7 +50,7 @@ public class DemoQaTest {
         $(".table-responsive").shouldHave(text("Vadim Frolov"));
         $(".table-responsive").shouldHave(text("vadim.frolov.2018@inbox.ru"));
         $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text("89996120281"));
+        $(".table-responsive").shouldHave(text("8999612028"));
         $(".table-responsive").shouldHave(text("15 October,1998"));
         $(".table-responsive").shouldHave(text("Physics, Computer Science"));
         $(".table-responsive").shouldHave(text("Sports"));
