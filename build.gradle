@@ -1,19 +1,20 @@
 plugins {
     id 'java-library'
-}
+} // здесь мы указываем язык, на котором будут писаться автотесты
 
 repositories {
     mavenCentral()
-}
+} // репозиторий, откуда будут подтягиваться все зависимости
 
 dependencies {
+    // зависимости в этом скоупах будут подключены только к src/test/java
     testImplementation(
             'com.codeborne:selenide:6.2.1',
-            'org.junit.jupiter:junit-jupiter:5.8.2'
+            'org.junit.jupiter:junit-jupiter:5.8.2' // эти зависимости будут подключаться только
     )
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2') //
 }
 
 test {
     useJUnitPlatform()
-}
+} // здесь мы указываем, что будет использоваться Junit 5
